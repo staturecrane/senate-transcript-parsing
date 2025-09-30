@@ -89,8 +89,10 @@ def main(print_transcript: bool) -> None:
         if current_speaker is None:
             current_speaker: str = speaker
             current_text += speaker_text
+        
         elif speaker is None or current_speaker == speaker:
             current_text += speaker_text
+        
         elif current_speaker != speaker:
             stripped_text: str = current_text.strip().replace("\n", "")
             transcript.append({"speaker": current_speaker, "text": stripped_text})
